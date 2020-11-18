@@ -1,0 +1,14 @@
+{
+    "costs": [
+        "samochód",
+        "spożywcze",
+        "rachunki",
+        "rozrywka"
+    ],
+    "incomes": [
+        "działalność gospodarcza",
+        "praca",
+        "przychody z najmu",
+        "świadczenia"
+    ]
+}
