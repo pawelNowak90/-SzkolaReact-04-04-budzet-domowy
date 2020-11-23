@@ -7,7 +7,8 @@ import Score from './components/Score';
 
 class App extends Component {
   state = {
-      balance:-100,
+      totalCost:-100,
+      totalIncome:750,
       costs: [
         { id:0,
           name:'majtki',
@@ -67,33 +68,38 @@ class App extends Component {
     changeIncomes = (newArray)=>{
       this.setState({incomes:newArray})
     }
+//DODAWANIE - czy nie lepiej stworzyć komponent CALCULATE i tam trzymać wydatki - uporządkować strukturę ?
+    //za-ini-cjalizować wywolanie tej funkcji - cykl zycia komponentow przed renderem ?
+    additionCosts = () =>{
+      console.log('dodaje wszystkie wydatki');
+      
+    }
   render() {
-    const {costs, incomes} = this.state;
+    const {costs, incomes, totalCost, totalIncome} = this.state;
     return (
       <div className="App">
-        <header className="mt-2"><h5>04-04 - Kalkulator wydatków</h5></header>
+        {/* <header className="mt-2"><h5>04-04 - Kalkulator wydatków</h5></header> */}
+        <div className="row">
+              <div className="col-6 offset-3">
+                  <Score totalCost={totalCost} totalIncome={totalIncome}/>
+              </div>
+          </div>
         <div className="container">
           <div className="row">
             <div className="col-md-4 border py-2 bg-light">
               <FormAddExpense costs={costs} incomes={incomes} changeCosts={this.changeCosts} changeIncomes={this.changeIncomes}/>
             </div>
             <div className="col-md-4 border py-2 bg-light">
-              <Costs costs={costs} deleteItem={this.deleteItem}/>
+              <Costs costs={costs} totalCost={totalCost} deleteItem={this.deleteItem}/>
             </div>
             <div className="col-md-4 border py-2 bg-light">
-              <Income incomes={incomes} deleteItem={this.deleteItem}/>
+              <Income incomes={incomes} totalIncome={totalIncome} deleteItem={this.deleteItem}/>
             </div>
-          </div>
-          <div className="row">
-              <div className="col-6 offset-3">
-                  <Score balance={this.state.balance}/>
-              </div>
           </div>
         </div>
       </div>
     );
   }
 }
-
 
 export default App;

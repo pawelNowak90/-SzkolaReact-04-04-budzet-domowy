@@ -2,7 +2,7 @@ import React from 'react';
 
 import Item from './components/Item';
 
-const Income = ({incomes, deleteItem}) => {
+const Income = ({incomes, deleteItem, totalIncome}) => {
     return (
         <div className="income">
             <h5>Dochody</h5>
@@ -17,6 +17,7 @@ const Income = ({incomes, deleteItem}) => {
                     type={income.type}
                 />))
             }
+            <p>Suma przychodów: <span>{totalIncome}</span></p>
         </div>
     );
 }

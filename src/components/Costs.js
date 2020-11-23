@@ -2,7 +2,7 @@ import React from 'react';
 
 import Item from './components/Item';
 
-const Costs = ({costs, deleteItem}) => {
+const Costs = ({costs, deleteItem, totalCost}) => {
     return (
         <div className="costs">
             <h5>Wydatki</h5>
@@ -17,7 +17,8 @@ const Costs = ({costs, deleteItem}) => {
                     type={cost.type}
                 />))
             }
-                    {/* TODO przekazywanie do props całego obiektu z .map*/}
+                {/* TODO przekazywanie do props całego obiektu z .map*/}
+        <p>Suma wydatków <span>{totalCost}</span></p>
         </div>
     );
 }

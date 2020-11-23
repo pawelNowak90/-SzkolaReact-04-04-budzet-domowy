@@ -6,8 +6,10 @@ import './FormAddExpense.css';
 class FormAddExpense extends Component {
 constructor(props){
     super(props)
+    //zmienic nazwe refów do czyszczenia
     this.isCostsInput = React.createRef();
     this.isIncomesInput = React.createRef();
+    this.clearSelectInput = React.createRef();
 }
     state = {
 		id:100,
@@ -19,10 +21,28 @@ constructor(props){
         type:'',
     }
     categories = [];
+
     handleSubmit = (e) => {
         e.preventDefault();
-		this.handleReset();
-	}
+        //VALIDATE
+        // THEN .PUSH
+        const {name, category, amount, income, cost} = this.state;
+        if(name && category && amount && (income || cost)){
+            if(this.state.cost===true){         // TODO - zastąpić dwa ify czymś zagrabniejszym, jakiś pomysł ?
+                let newCosts = [...this.props.costs];
+                newCosts.push(this.state);
+                this.props.changeCosts(newCosts);
+            }
+            if(this.state.income===true){
+                let newIncome = [...this.props.incomes];
+                newIncome.push(this.state);
+                this.props.changeIncomes(newIncome);
+            }
+            this.handleReset();
+        } else{
+            alert('uzupełnij wszystkie pola formularza')
+        }
+    }
 
 	handleReset = ()=>{
 		this.setState({
@@ -35,20 +55,7 @@ constructor(props){
         })
         this.isCostsInput.current.checked=false;
         this.isIncomesInput.current.checked=false;
-	}
-
-	handleClick = () =>{
-        if(this.state.cost===true){         // TODO - zastąpić dwa ify czymś zagrabniejszym, jakiś pomysł ?
-            let newCosts = [...this.props.costs];
-            newCosts.push(this.state);
-            this.props.changeCosts(newCosts);
-        }
-        if(this.state.income===true){
-            let newIncome = [...this.props.incomes];
-            newIncome.push(this.state);
-            this.props.changeIncomes(newIncome);
-        }
-        //TODO - sprawdzać walidację czy formularz nie wysyla pustego/niekompletnego obiektu !! wartość nie jest poniżej zera, wartość liczbowa jest zoakraglona do 2 miejsc po przecinku
+        this.clearSelectInput.current.value="";
 	}
 
     handleChange = (e) => {
@@ -88,16 +95,16 @@ constructor(props){
                     </div>
                     <div className="form-control mt-2 text-left">
                         <label htmlFor="amount">Kwota w zł:</label>
-                        <input onChange={this.handleChange} type="number" name="amount" id="amount" value={amount}/>
-                    </div>
+                        <input onChange={this.handleChange} type="number" step="0.01" min="0" name="amount" id="amount" value={amount}/>
+                        </div>
                     <div className="form-control mt-2 text-left">
                         <label htmlFor="category">Kategoria:</label>
-                        <select onChange={this.handleChange} name="category" id="category" value={this.state.id}>
+                        <select onChange={this.handleChange} name="category" id="category" ref={this.clearSelectInput}>
                             <option value="" disabled selected> kategoria</option>
                             {this.categories.map((item, key) => ( <option id="category" key={key} value={item}> {item} </option>))}
                         </select>
                     </div>
-                    <button onClick={this.handleClick} className="btn btn-primary mt-2" type="submit">Dodaj pozycję do budżetu</button>
+                    <button className="btn btn-primary mt-2" type="submit">Dodaj pozycję do budżetu</button>
                 </div>
 			{/* <p>income: {income ? "true" : "false"}</p>
             <p>cost: {cost ? "true" : "false"}</p>
