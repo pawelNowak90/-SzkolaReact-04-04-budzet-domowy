@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/budget/static/css/main.01dba479.chunk.css",
-    "main.js": "/budget/static/js/main.06d0c773.chunk.js",
-    "main.js.map": "/budget/static/js/main.06d0c773.chunk.js.map",
-    "runtime-main.js": "/budget/static/js/runtime-main.079f840b.js",
-    "runtime-main.js.map": "/budget/static/js/runtime-main.079f840b.js.map",
-    "static/js/2.6b42dfd3.chunk.js": "/budget/static/js/2.6b42dfd3.chunk.js",
-    "static/js/2.6b42dfd3.chunk.js.map": "/budget/static/js/2.6b42dfd3.chunk.js.map",
-    "static/js/3.4a48e7e6.chunk.js": "/budget/static/js/3.4a48e7e6.chunk.js",
-    "static/js/3.4a48e7e6.chunk.js.map": "/budget/static/js/3.4a48e7e6.chunk.js.map",
-    "index.html": "/budget/index.html",
-    "static/css/main.01dba479.chunk.css.map": "/budget/static/css/main.01dba479.chunk.css.map",
-    "static/js/2.6b42dfd3.chunk.js.LICENSE.txt": "/budget/static/js/2.6b42dfd3.chunk.js.LICENSE.txt"
+    "main.css": "/-SzkolaReact-04-04-budzet-domowy/static/css/main.01dba479.chunk.css",
+    "main.js": "/-SzkolaReact-04-04-budzet-domowy/static/js/main.06d0c773.chunk.js",
+    "main.js.map": "/-SzkolaReact-04-04-budzet-domowy/static/js/main.06d0c773.chunk.js.map",
+    "runtime-main.js": "/-SzkolaReact-04-04-budzet-domowy/static/js/runtime-main.cb03f3d9.js",
+    "runtime-main.js.map": "/-SzkolaReact-04-04-budzet-domowy/static/js/runtime-main.cb03f3d9.js.map",
+    "static/js/2.6b42dfd3.chunk.js": "/-SzkolaReact-04-04-budzet-domowy/static/js/2.6b42dfd3.chunk.js",
+    "static/js/2.6b42dfd3.chunk.js.map": "/-SzkolaReact-04-04-budzet-domowy/static/js/2.6b42dfd3.chunk.js.map",
+    "static/js/3.4a48e7e6.chunk.js": "/-SzkolaReact-04-04-budzet-domowy/static/js/3.4a48e7e6.chunk.js",
+    "static/js/3.4a48e7e6.chunk.js.map": "/-SzkolaReact-04-04-budzet-domowy/static/js/3.4a48e7e6.chunk.js.map",
+    "index.html": "/-SzkolaReact-04-04-budzet-domowy/index.html",
+    "static/css/main.01dba479.chunk.css.map": "/-SzkolaReact-04-04-budzet-domowy/static/css/main.01dba479.chunk.css.map",
+    "static/js/2.6b42dfd3.chunk.js.LICENSE.txt": "/-SzkolaReact-04-04-budzet-domowy/static/js/2.6b42dfd3.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.079f840b.js",
+    "static/js/runtime-main.cb03f3d9.js",
     "static/js/2.6b42dfd3.chunk.js",
     "static/css/main.01dba479.chunk.css",
     "static/js/main.06d0c773.chunk.js"
